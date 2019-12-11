@@ -31,7 +31,7 @@ public class Input {
         int number;
 
         try {
-            number = Integer.valueOf(getString("Please give me a number: "));
+            number = Integer.valueOf(getString("Please Enter a number: "));
         } catch (NumberFormatException nfe){
             System.out.println("Input is not a number, please put in a number");
             return getInt();
