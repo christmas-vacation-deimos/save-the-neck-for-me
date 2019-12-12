@@ -35,9 +35,8 @@ public class thomasOffer {
                     "_______\n"+ "---'   ____)\n" + "      (_____)\n" + "      (_____)\n" +"      (____)\n" + "---.__(___)\n" +
                     "Enter 3 for Paper\n     __________\n" + "---'    _______)____\n" + "           _________)\n" + "          __________)\n" +
                     "         __________)\n" + "---._____________)\n" + "Enter 4 to exit");
-            int playerMove = input1.getInt(1, 5);
+            int playerMove = input1.getInt(1,5);
             int rand = (int) (Math.random() * 3) + 1;
-
 
             switch (playerMove) {
                 case 1:
@@ -230,8 +229,54 @@ public class thomasOffer {
                     "Enter 3 for Paper\n     __________\n" + "---'    _______)____\n" + "           _________)\n" + "          __________)\n" +
                     "         __________)\n" + "---._____________)\n" + "Enter 4 to exit");
             int player2Move = input1.getInt(1, 5);
+                switch (player1Move) {
+                    case 1:
+                        System.out.printf("%s throws Scissors\n", player1);
+                        System.out.println("    _    _\n" +
+                                "   (_)  / )\n" +
+                                "     | (_/ \n" +
+                                "    _+/  \n" +
+                                "   //|\\\n" +
+                                "  // | )\n" +
+                                " (/  |/    ");
+                        switch (player2Move){
+                            case 1:
+                                System.out.printf("%s throws Scissors\n",player2);
+                                System.out.println("    _    _\n" +
+                                        "   (_)  / )\n" +
+                                        "     | (_/ \n" +
+                                        "    _+/  \n" +
+                                        "   //|\\\n" +
+                                        "  // | )\n" +
+                                        " (/  |/    \n");
+                                System.out.println("It's a tie, No Points!\n");
+                                break;
+                            case 2:
+                                System.out.printf("%s throws Rock\n    _______\n" +
+                                        "---'   ____)\n" +
+                                        "      (_____)\n" +
+                                        "      (_____)\n" +
+                                        "      (____)\n" +
+                                        "---.__(___)\n\nRock crushes Scissors\n\n%s gets the point!",player2);
+                                player2Score += 1;
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                                break;
+                            case 3:
+                                System.out.printf("%s throws Paper\n     __________\n" +
+                                        "---'    _______)____\n" +
+                                        "           _________)\n" +
+                                        "          __________)\n" +
+                                        "         __________)\n" +
+                                        "---._____________)\n\nFire burns Paper to ashes\n\nYou get 15 points!",player2);
+                                player1Score += 1;
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                            case 4:
+                                System.out.println("Are you sure you want to exit?");
 
-
+                                confirm1 = false;
+                                break;
+                        }
+                }
         } while (confirm1);
     }
 }
