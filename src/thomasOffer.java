@@ -1,8 +1,10 @@
 import util.Input;
 
+import java.util.Scanner;
+
 public class thomasOffer {
     static Input input1 = new Input();
-
+    static Scanner scan = new Scanner(System.in);
     // rock paper scissors
     public static void main(String[] args) {
         Input input = new Input();
@@ -29,10 +31,11 @@ public class thomasOffer {
         do {
             System.out.println("\n Move Menu\n-----------------\n" + "Enter 1 for Scissors\n"+"    _    _\n" + "   (_)  / )\n" +
                     "     | (_/ \n" + "    _+/  \n" +  "   //|\\\n" +  "  // | )\n" +  " (/  |/    \n" +
-                    "Enter 2 for Rock\n" + "    _______\n"+ "---'   ____)\n" + "      (_____)\n" + "      (_____)\n" +"      (____)\n" + "---.__(___)\n" +
+                    "Enter 2 for Rock\n" + "    " +
+                    "_______\n"+ "---'   ____)\n" + "      (_____)\n" + "      (_____)\n" +"      (____)\n" + "---.__(___)\n" +
                     "Enter 3 for Paper\n     __________\n" + "---'    _______)____\n" + "           _________)\n" + "          __________)\n" +
                     "         __________)\n" + "---._____________)\n" + "Enter 4 to exit");
-            int playerMove = input1.getInt(1, 4);
+            int playerMove = input1.getInt(1, 5);
             int rand = (int) (Math.random() * 3) + 1;
 
 
@@ -149,45 +152,47 @@ public class thomasOffer {
 
                     confirm = false;
                     break;
+                case 5:
+                    System.out.println("You have earned Fire!\n               (  .      )\n" +
+                            "           )           (              )\n" +
+                            "                 .  '   .   '  .  '  .\n" +
+                            "        (    , )       (.   )  (   ',    )\n" +
+                            "         .' ) ( . )    ,  ( ,     )   ( .\n" +
+                            "      ). , ( .   (  ) ( , ')  .' (  ,    )\n" +
+                            "     (_,) . ), ) _) _,')  (, ) '. )  ,. (' )\n" +
+                            "    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nPlayer throws Fire!");
+                    if (rand == 1) {
+                        System.out.println("Computer throws Scissors\n    _    _\n" +
+                                "   (_)  / )\n" +
+                                "     | (_/ \n" +
+                                "    _+/  \n" +
+                                "   //|\\\n" +
+                                "  // | )\n" +
+                                " (/  |/    \n\nFire melts down Scissors\n\nYou get 5 points!");
+                        playerScore += 5;
+                        System.out.printf("The score is:%n Player: %d%n Computer %d%n", playerScore, computerScore);
+                    } else if (rand == 2) {
+                        System.out.println("Computer throws Rock\n    _______\n" +
+                                "---'   ____)\n" +
+                                "      (_____)\n" +
+                                "      (_____)\n" +
+                                "      (____)\n" +
+                                "---.__(___)\n\nFire melts down Rock\n\nYou get 10 points!");
+                        playerScore += 10;
+                        System.out.printf("The score is:%n Player: %d%n Computer %d%n", playerScore, computerScore);
+                    } else {
+                        System.out.println("Computer throws Paper\n     __________\n" +
+                                "---'    _______)____\n" +
+                                "           _________)\n" +
+                                "          __________)\n" +
+                                "         __________)\n" +
+                                "---._____________)\n\nFire burns Paper to ashes\n\nYou get 15 points!");
+                        playerScore += 15;
+                        System.out.printf("The score is:%n Player: %d%n Computer %d%n", playerScore, computerScore);
+                    }
             }
-            if (playerScore == computerScore + 3) {
-                System.out.println("You have earned Fire!\n               (  .      )\n" +
-                        "           )           (              )\n" +
-                        "                 .  '   .   '  .  '  .\n" +
-                        "        (    , )       (.   )  (   ',    )\n" +
-                        "         .' ) ( . )    ,  ( ,     )   ( .\n" +
-                        "      ). , ( .   (  ) ( , ')  .' (  ,    )\n" +
-                        "     (_,) . ), ) _) _,')  (, ) '. )  ,. (' )\n" +
-                        "    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nPlayer throws Fire!");
-                if (rand == 1) {
-                    System.out.println("Computer throws Scissors\n    _    _\n" +
-                            "   (_)  / )\n" +
-                            "     | (_/ \n" +
-                            "    _+/  \n" +
-                            "   //|\\\n" +
-                            "  // | )\n" +
-                            " (/  |/    \n\nFire melts down Scissors\n\nYou get 5 points!");
-                    playerScore += 5;
-                    System.out.printf("The score is:%n Player: %d%n Computer %d%n", playerScore, computerScore);
-                } else if (rand == 2) {
-                    System.out.println("Computer throws Rock\n    _______\n" +
-                            "---'   ____)\n" +
-                            "      (_____)\n" +
-                            "      (_____)\n" +
-                            "      (____)\n" +
-                            "---.__(___)\n\nFire melts down Rock\n\nYou get 10 points!");
-                    playerScore += 10;
-                    System.out.printf("The score is:%n Player: %d%n Computer %d%n", playerScore, computerScore);
-                } else {
-                    System.out.println("Computer throws Paper\n     __________\n" +
-                            "---'    _______)____\n" +
-                            "           _________)\n" +
-                            "          __________)\n" +
-                            "         __________)\n" +
-                            "---._____________)\n\nFire burns Paper to ashes\n\nYou get 15 points!");
-                    playerScore += 15;
-                    System.out.printf("The score is:%n Player: %d%n Computer %d%n", playerScore, computerScore);
-                }
+            if (playerScore % 3 == 0 && computerScore == playerScore -3) {
+
 
             }
 
@@ -198,19 +203,34 @@ public class thomasOffer {
         boolean confirm1 = true;
         int player1Score = 0;
         int player2Score = 0;
-        int player1move;
-        int player2move;
         String player1;
         String player2;
 
         System.out.println("What is Player 1's name?");
-        player1 = input1.getString();
+        player1 = scan.nextLine();
         System.out.printf("Welcome, it's nice to meet you %s%n", player1);
         System.out.println("What is Player 2's name?");
-        player2 = input1.getString();
+        player2 = scan.nextLine();
         System.out.printf("Welcome, it's nice to meet you %s%n", player2);
         do {
-            System.out.printf("%s, Please choose a move!/n ");
+            System.out.printf("%s, Please choose a move!%n ",player1);
+            System.out.println("\n Move Menu\n-----------------\n" + "Enter 1 for Scissors\n"+"    _    _\n" + "   (_)  / )\n" +
+                    "     | (_/ \n" + "    _+/  \n" +  "   //|\\\n" +  "  // | )\n" +  " (/  |/    \n" +
+                    "Enter 2 for Rock\n" + "    " +
+                    "_______\n"+ "---'   ____)\n" + "      (_____)\n" + "      (_____)\n" +"      (____)\n" + "---.__(___)\n" +
+                    "Enter 3 for Paper\n     __________\n" + "---'    _______)____\n" + "           _________)\n" + "          __________)\n" +
+                    "         __________)\n" + "---._____________)\n" + "Enter 4 to exit");
+            int player1Move = input1.getInt(1, 5);
+
+            System.out.printf("%s, Please choose a move!\n ",player2);
+            System.out.println("\n Move Menu\n-----------------\n" + "Enter 1 for Scissors\n"+"    _    _\n" + "   (_)  / )\n" +
+                    "     | (_/ \n" + "    _+/  \n" +  "   //|\\\n" +  "  // | )\n" +  " (/  |/    \n" +
+                    "Enter 2 for Rock\n" + "    " +
+                    "_______\n"+ "---'   ____)\n" + "      (_____)\n" + "      (_____)\n" +"      (____)\n" + "---.__(___)\n" +
+                    "Enter 3 for Paper\n     __________\n" + "---'    _______)____\n" + "           _________)\n" + "          __________)\n" +
+                    "         __________)\n" + "---._____________)\n" + "Enter 4 to exit");
+            int player2Move = input1.getInt(1, 5);
+
 
         } while (confirm1);
     }
