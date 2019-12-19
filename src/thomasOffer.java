@@ -257,7 +257,7 @@ public class thomasOffer {
                                         "      (_____)\n" +
                                         "      (_____)\n" +
                                         "      (____)\n" +
-                                        "---.__(___)\n\nRock crushes Scissors\n\n%s gets the point!",player2);
+                                        "---.__(___)\n\nRock crushes Scissors into paperclips\n\n%s gets the point!",player2);
                                 player2Score += 1;
                                 System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
                                 break;
@@ -267,7 +267,7 @@ public class thomasOffer {
                                         "           _________)\n" +
                                         "          __________)\n" +
                                         "         __________)\n" +
-                                        "---._____________)\n\nFire burns Paper to ashes\n\nYou get 15 points!",player2);
+                                        "---._____________)\n\n Scissors shred Paper to Confetti\n\n%s get a points!",player1);
                                 player1Score += 1;
                                 System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
                             case 4:
@@ -276,6 +276,102 @@ public class thomasOffer {
                                 confirm1 = false;
                                 break;
                         }
+                        break;
+                    case 2:
+                        System.out.printf("%s throws Rock\n    _______\n" +
+                                "---'   ____)\n" +
+                                "      (_____)\n" +
+                                "      (_____)\n" +
+                                "      (____)\n" +
+                                "---.__(___)\n\n", player1);
+                        switch (player2Move){
+                            case 1:
+                                System.out.printf("%s throws Scissors\n",player2);
+                                System.out.println("    _    _\n" +
+                                        "   (_)  / )\n" +
+                                        "     | (_/ \n" +
+                                        "    _+/  \n" +
+                                        "   //|\\\n" +
+                                        "  // | )\n" +
+                                        " (/  |/    \n");
+                                System.out.printf("Rock crushes Scissors into paperclips\n\n%s gets the point!",player1);
+                                player1Score += 1;
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                                break;
+                            case 2:
+                                System.out.printf("%s throws Rock\n    _______\n" +
+                                        "---'   ____)\n" +
+                                        "      (_____)\n" +
+                                        "      (_____)\n" +
+                                        "      (____)\n" +
+                                        "---.__(___)\n\nRocks like other Rocks and make pebbles, No Points!");
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                                break;
+                            case 3:
+                                System.out.printf("%s throws Paper\n     __________\n" +
+                                        "---'    _______)____\n" +
+                                        "           _________)\n" +
+                                        "          __________)\n" +
+                                        "         __________)\n" +
+                                        "---._____________)\n\nPaper suffocates Rock\n\n%s gets a point",player2, player2);
+                                player2Score += 1;
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                            case 4:
+                                System.out.println("Are you sure you want to exit?");
+
+                                confirm1 = false;
+                                break;
+                        }
+                        break;
+                    case 3:
+                        System.out.printf("%s throws Paper\n     __________\n" +
+                                "---'    _______)____\n" +
+                                "           _________)\n" +
+                                "          __________)\n" +
+                                "         __________)\n" +
+                                "---._____________)\n\n",player1);
+                        switch (player2Move){
+                            case 1:
+                                System.out.printf("%s throws Scissors\n",player2);
+                                System.out.println("    _    _\n" +
+                                        "   (_)  / )\n" +
+                                        "     | (_/ \n" +
+                                        "    _+/  \n" +
+                                        "   //|\\\n" +
+                                        "  // | )\n" +
+                                        " (/  |/    \n");
+                                System.out.printf("Scissors cut Paper into confetti\n\n%s gets the point!",player2);
+                                player1Score += 2;
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                                break;
+                            case 2:
+                                System.out.printf("%s throws Rock\n    _______\n" +
+                                        "---'   ____)\n" +
+                                        "      (_____)\n" +
+                                        "      (_____)\n" +
+                                        "      (____)\n" +
+                                        "---.__(___)\n\nPaper suffocates Rock, %s gets a point", player2);
+                                player1Score += 1;
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                                break;
+                            case 3:
+                                System.out.printf("%s throws Paper\n     __________\n" +
+                                        "---'    _______)____\n" +
+                                        "           _________)\n" +
+                                        "          __________)\n" +
+                                        "         __________)\n" +
+                                        "---._____________)\n\nPaper likes Paper, no points!",player2);
+                                System.out.printf("The score is:%n %s: %d%n %s: %d%n", player1, player1Score, player2, player2Score);
+                            case 4:
+                                System.out.println("Are you sure you want to exit?");
+                                confirm1 = false;
+                                break;
+                        }
+                        break;
+                    case 4:
+                        System.out.println("Are you sure you want to exit?");
+                        confirm1 = false;
+                        break;
                 }
         } while (confirm1);
     }
