@@ -85,7 +85,6 @@ public class Ethan {
         boolean isPlus = false;
         int falseCount = 0;
         String letters = "abcdefghijklmnopqrstuvwxyz";
-
         for (int i = 0; i < str.length(); i++){
             if (str.charAt(i) != '+' && i > 0 && i < str.length() - 1){
                 for (int j = 0; j < letters.length(); j ++){
